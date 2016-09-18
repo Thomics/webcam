@@ -5,7 +5,10 @@ count = 0
 #name - name of the photo, num is the iteration
 def take_photo(interval, name, num):
 	print(name + " " + str(num))
-	os.system("fswebcam -r 640x480 --no-banner /photos/" + name + str(num))
+
+	cur_dir = os.getcwd()
+
+	os.system("fswebcam -r 640x480 --no-banner " + cur_dir + "/photos/" + name + str(num))
 	time.sleep(interval)
 
 
