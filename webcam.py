@@ -5,14 +5,15 @@ img_list = []
 
 #name - name of the photo, num is the iteration
 def take_photo(interval, name, num):
-	print(name + " " + str(num))
 	cur_dir = os.getcwd()
-	print(cur_dir)
 	cur_time = datetime.datetime.now()
-	os.system("fswebcam -r 640x480 --no-banner " + cur_dir + "/photos/" + name + str(num) + '-' + str(cur_time.year) + '-' + str(cur_time.month) + '-' + str(cur_time.day) + '.jpg')
+	#Generates the photo that will display on the page.
+	os.system("fswebcam -r 1024x768 --no-banner " + cur_dir + '/' + 'boat-life.jpg')
+	#Stores all photos created in a photos folder.
+	os.system("fswebcam -r 1024x768 --no-banner " + cur_dir + "/photos/" + name + str(num) + '-' + str(cur_time.year) + '-' + str(cur_time.month) + '-' + str(cur_time.day) + '.jpg')
 	img_list.extend(name + str(num) + '-' + str(cur_time.year) + '-' + str(cur_time.month) + '-' + str(cur_time.day) + '.jpg')
 	time.sleep(interval)
-
+#end take_photo
 
 
 while True:
