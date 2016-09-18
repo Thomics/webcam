@@ -12,7 +12,7 @@ def take_photo(interval, name, num):
 	os.system("fswebcam -r 640x480 --no-banner " + cur_img)
 	
 	#Creates a copy of the current photo to serve up as the homepage image.
-	shutil.copy2('cur_img', cur_dir + '/boat-life.jpg')
+	shutil.copy2(cur_img, cur_dir + '/boat-life.jpg')
 
 	time.sleep(interval)
 #end take_photo
