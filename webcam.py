@@ -7,9 +7,10 @@ img_list = []
 def take_photo(interval, name, num):
 	print(name + " " + str(num))
 	cur_dir = os.getcwd()
-	time = datetime.datetime.now()
-	os.system("fswebcam -r 640x480 --no-banner " + cur_dir + "/photos/" + name + str(num) + '-' + str(time.year) + '-' + str(time.month) + '-' + str(time.day))
-	img_list.extend(name + str(num) + '-' + str(time.year) + '-' + str(time.month) + '-' + str(time.day))
+	print(cur_dir)
+	cur_time = datetime.datetime.now()
+	os.system("fswebcam -r 640x480 --no-banner " + cur_dir + "/photos/" + name + str(num) + '-' + str(cur_time.year) + '-' + str(cur_time.month) + '-' + str(cur_time.day) + '.jpg')
+	img_list.extend(name + str(num) + '-' + str(cur_time.year) + '-' + str(cur_time.month) + '-' + str(cur_time.day) + '.jpg')
 	time.sleep(interval)
 
 
