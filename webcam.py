@@ -1,4 +1,4 @@
-import time, os, datetime, shutil
+import time, os, datetime, shutil, json
 
 count = 0
 
@@ -11,9 +11,12 @@ def take_photo(interval, name, num):
 	#Stores all photos created in a photos folder.
 	os.system("fswebcam -r 640x480 --no-banner " + cur_img)
 	
-	os.system('rm -Rf ' + cur_dir + "/boat-life.jpg")
 	#Creates a copy of the current photo to serve up as the homepage image.
-	shutil.copy2(cur_img, cur_dir + '/boat-life.jpg')
+	# shutil.copy2(cur_img, cur_dir + '/boat-life.jpg')
+
+	w_file = open('images.txt', 'a')
+	w_file.write(name + str(num) + '-' + str(cur_time.year) + '-' + str(cur_time.month) + '-' + str(cur_time.day) + '.jpg ')
+	w_file.close()
 
 	time.sleep(interval)
 #end take_photo
