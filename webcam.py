@@ -20,4 +20,4 @@ def take_photo(interval, name, num):
 
 while True:
 	count = count + 1
-	take_photo(3, 'boat', count)
+	take_photo(120, 'boat', count)
