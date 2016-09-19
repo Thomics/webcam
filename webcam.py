@@ -11,6 +11,7 @@ def take_photo(interval, name, num):
 	#Stores all photos created in a photos folder.
 	os.system("fswebcam -r 640x480 --no-banner " + cur_img)
 	
+	os.system('rm -Rf ' + cur_dir + "/boat-life.jpg")
 	#Creates a copy of the current photo to serve up as the homepage image.
 	shutil.copy2(cur_img, cur_dir + '/boat-life.jpg')
 
